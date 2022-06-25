@@ -1,0 +1,6 @@
+<section>
+  <div class="flex-container">
+    <app-chat class="flex-item" [name]="firstChatName" [receiver]="secondChatName" [messages]="messages" (messageEvent)="messageReceived($event)"></app-chat>
+    <app-chat class="flex-item" [name]="secondChatName" [receiver]="firstChatName" [messages]="messages" (messageEvent)="messageReceived($event)"></app-chat>
+  </div>
+</section>
