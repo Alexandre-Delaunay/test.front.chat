@@ -1,0 +1,18 @@
+<div>
+  <h1>{{name}}</h1>
+</div>
+<div class="scroller">
+  <div *ngFor="let message of messages">
+    <p *ngIf="message.sender == name; else messageTemplate" class="senderTemplate">{{message.sender}}:
+      {{message.content}}</p>
+    <ng-template #messageTemplate>
+      <p class="receiverTemplate">{{message.sender}}: {{message.content}}</p>
+    </ng-template>
+  </div>
+</div>
+<form [formGroup]="form">
+<div class="sender">
+    <input class="input" type="text" formControlName="content">
+    <button class="button" type="reset" (click)="sendMessage()">Ok</button>
+</div>
+</form>
